@@ -1,0 +1,9 @@
+*.dll
+*.exe
+*.o
+*.so
+*.com
+*.class
+test*
+.vscode
+compiled/
