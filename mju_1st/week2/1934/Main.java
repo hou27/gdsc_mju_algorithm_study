@@ -12,10 +12,24 @@ public class Main {
     sc.close();
   }
 
+  /**
+   * 최소공배수
+   * 
+   * @param a
+   * @param b
+   * @return a와 b의 최소공배수
+   */
   static int lcm(int a, int b) {
     return a * b / gcd(a, b);
   }
 
+  /**
+   * 최대공약수
+   * 
+   * @param a
+   * @param b
+   * @return a와 b의 최대공약수
+   */
   static int gcd(int a, int b) {
     if (b == 0) {
       return a;
