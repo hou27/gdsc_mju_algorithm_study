@@ -40,7 +40,6 @@
 // }
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -55,7 +54,8 @@ public class Main {
     }
     sc.close();
 
-    Arrays.sort(rope, Collections.reverseOrder()); // 내림차순 정렬
+    // Arrays.sort(rope, Collections.reverseOrder()); // 내림차순 정렬
+    Arrays.sort(rope, (o1, o2) -> o2 - o1);
 
     for (int i = 0; i < N; i++) {
       int cur_max = rope[i] * (i + 1); // 현재 로프가 버틸 수 있는 중량을 기준으로 계산
