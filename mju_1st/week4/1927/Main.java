@@ -70,33 +70,63 @@
 //   }
 // }
 
-import java.util.Collections;
-import java.util.LinkedList;
+// import java.util.Collections;
+// import java.util.LinkedList;
+// import java.util.Scanner;
+
+// public class Main {
+//   public static void main(String[] args) {
+//     Scanner sc = new Scanner(System.in);
+//     int N = sc.nextInt(); // 연산의 개수
+//     // ArrayList<Integer> heap = new ArrayList<>();
+
+//     LinkedList<Integer> heap = new LinkedList<Integer>();
+
+//     for (int i = 0; i < N; i++) {
+//       int x = sc.nextInt();
+//       if (x == 0) {
+//         // 배열에서 가장 작은 값을 출력하고 그 값을 제거
+//         if (heap.size() == 0) {
+//           System.out.println(0);
+//         } else {
+//           System.out.println(heap.remove(0));
+//           Collections.sort(heap);
+//         }
+//       } else {
+//         // 배열에 x라는 값을 넣는다.
+//         heap.add(x);
+//         Collections.sort(heap);
+//       }
+//     }
+
+//     sc.close();
+//   }
+// }
+
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt(); // 연산의 개수
-    // ArrayList<Integer> heap = new ArrayList<>();
 
     // queue
-    LinkedList<Integer> heap = new LinkedList<Integer>();
+    Queue<Integer> heap = new PriorityQueue<>(); // 오름차순으로 선언
 
     for (int i = 0; i < N; i++) {
       int x = sc.nextInt();
       if (x == 0) {
-        // 배열에서 가장 작은 값을 출력하고 그 값을 제거
+        // 우선순위 큐에서 가장 작은 값을 출력하고 그 값을 제거
         if (heap.size() == 0) {
           System.out.println(0);
         } else {
-          System.out.println(heap.remove(0));
-          Collections.sort(heap);
+          System.out.println(heap.remove());
         }
       } else {
-        // 배열에 x라는 값을 넣는다.
+        // 우선순위 큐에 x라는 값을 넣는다.
         heap.add(x);
-        Collections.sort(heap);
       }
     }
 
