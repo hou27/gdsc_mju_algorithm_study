@@ -259,7 +259,6 @@ public class Main {
       }
     }
     sb.append("]\n");
-    System.out.println("here");
     System.out.print(sb);
   }
 }
