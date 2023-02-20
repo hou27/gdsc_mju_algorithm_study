@@ -37,11 +37,6 @@ public class Main {
       return false;
     }
 
-    // 반시계 방향으로 회전
-    public void turnLeft() {
-      this.d = (this.d + 3) % 4;
-    }
-
     // 한 칸 전진
     public void goForward() {
       switch (this.d) {
