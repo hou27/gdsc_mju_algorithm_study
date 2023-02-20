@@ -28,7 +28,7 @@ public class Main {
         int dr = r + drs[curD];
         int dc = c + dcs[curD];
         // 조건 확인
-        if (dr > 0 && dc > 0 && dr < N && dc < M && room[dr][dc] == 0) {
+        if (dr >= 0 && dc >= 0 && dr < N && dc < M && room[dr][dc] == 0) {
           this.d = curD;
           return true;
         }
@@ -99,11 +99,11 @@ public class Main {
 
     sc.close();
 
-    while (robotVacuum.r > 0 && robotVacuum.r < N &&
-        robotVacuum.c > 0 && robotVacuum.c < M) {
+    while (robotVacuum.r >= 0 && robotVacuum.r < N &&
+        robotVacuum.c >= 0 && robotVacuum.c < M && room[robotVacuum.r][robotVacuum.c] != 1) {
       // 현재 위치를 청소
       if (room[robotVacuum.r][robotVacuum.c] == 0) {
-        room[robotVacuum.r][robotVacuum.c] = 1;
+        room[robotVacuum.r][robotVacuum.c] = 2;
         robotVacuum.cleaned++;
       }
 
