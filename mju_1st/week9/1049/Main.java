@@ -27,8 +27,13 @@ public class Main {
     sc.close();
 
     // 최소값을 이용하여 최소 비용 계산(필요한 기타줄 개수보다 많이 구매하는 경우가 있음)
-    minTotal = N >= 6 ? (N / 6) * minPackage + Math.min((N % 6) * minSingle, minPackage)
-        : Math.min(N * minSingle, minPackage);
+    // if (minPackage < minSingle * 6) {
+    // minTotal = (N / 6) * minPackage + Math.min((N % 6) * minSingle, minPackage);
+    // } else {
+    // minTotal = N * minSingle;
+    // }
+    minTotal = Math.min(N * minSingle,
+        Math.min(((N / 6) + 1) * minPackage, (N / 6) * minPackage + (N % 6) * minSingle));
 
     System.out.println(minTotal);
   }
