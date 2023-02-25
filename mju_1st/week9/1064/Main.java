@@ -12,9 +12,9 @@ public class Main {
 
     sc.close();
 
-    // Line AB, Line AC의 기울기
-    double slopeAB = (double) (yB - yA) / (xB - xA);
-    double slopeAC = (double) (yC - yA) / (xC - xA);
+    // Line AB, Line AC의 기울기 절댓값
+    double slopeAB = Math.abs((double) (yA - yB) / (xA - xB));
+    double slopeAC = Math.abs((double) (yA - yC) / (xA - xC));
 
     // 평행사변형이 될 수 없는 세점일 경우 -1 출력
     if (xA == xB && yA == yB || xA == xC && yA == yC || xB == xC && yB == yC || slopeAB == slopeAC) {
